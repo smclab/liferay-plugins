@@ -1,0 +1,19 @@
+<%@ include file="/html/common/themes/top_meta.portal.jspf" %>
+
+<%-- Analytics Verification --%>
+
+<%
+String googleVerificationId = null;
+
+if (layout != null) {
+	Group group = layout.getGroup();
+
+	UnicodeProperties groupTypeSettings = group.getTypeSettingsProperties();
+
+	googleVerificationId = groupTypeSettings.getProperty("googleVerificationId");
+}
+%>
+<c:if test="<%= Validator.isNotNull(googleVerificationId) %>">
+	<meta name="google-site-verification" content="<%= googleVerificationId%>" />
+</c:if>
+
