@@ -1,0 +1,408 @@
+
+$arrows-color: #2AAAE6;
+$arrows-color-hover: #0000FF;
+$arrows-color-active: #D3D3D3;
+$calendar-signal: #2AAAE6;
+$text-calendar-signal: #FFFFFF;
+$calendar-event-separator: #D3D3D3;
+$tooltip-background: #FFFFFF;
+
+.calendar-events-portlet {
+
+	.taglib-calendar {
+		margin: 5px auto;
+		width: 100%;
+	}
+
+	.taglib-calendar ul.inline {
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		text-align: center;
+	}
+
+	.taglib-calendar ul.inline li {
+		width:12.48%;
+		height: 25px;
+		padding: 2% 0;
+		margin: 0px auto;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+		text-align: center;
+
+	}
+
+	.taglib-calendar .inline li.calendar-inactive, .taglib-calendar .inline li.calendar-previous-month{
+		color: transparent;
+	}
+
+	.taglib-calendar .inline li.calendar-day {
+	}
+
+	.taglib-calendar .inline li.calendar-day:hover {
+		background-color: $arrows-color-active;
+		color: $text-calendar-signal;
+	}
+
+	.taglib-calendar .inline li.calendar-current-day, .taglib-calendar .inline li.portlet-section-selected{
+		background-color: $calendar-signal;
+		color: $text-calendar-signal;
+		margin: 0 auto;
+	}
+
+	.portlet-section-header,.results-header{
+		color: $arrows-color;
+	}
+
+	.simple-calendar-header {
+		padding: 0 5% 3px;
+		overflow: hidden;
+		margin: 0 auto;
+		width: 90%;
+	}
+
+	.simple-calendar-header a {
+		margin: 3px 0 0 0;
+		float: left;
+		width: 10px;
+		padding: 3px;
+		position: relative;
+		text-align: center;
+		background-color: $arrows-color;
+		border-radius: 5px;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+	}
+
+	.simple-calendar-month {
+		text-align: center;
+		font-size: 18px;
+		width: 100%;
+		float: left;
+		margin: 0 -16px;
+		padding: 0
+	}
+
+	#triangle-left {
+		float: left;
+		border-right: 5px solid $text-calendar-signal;
+		border-top: 5px solid transparent;
+		border-bottom: 5px solid transparent;
+	}
+
+	#triangle-right {
+		float: right;
+		border-left: 5px solid $text-calendar-signal;
+		border-top: 5px solid transparent;
+		border-bottom: 5px solid transparent;
+	}
+
+	.simple-calendar-header a:HOVER {
+		background-color: $arrows-color-hover;
+	}
+
+	.simple-calendar-header a:ACTIVE {
+		background-color: $arrows-color-active;
+	}
+
+	#resultCalendarBooking {
+		width: 95%;
+		overflow: hidden;
+		padding: 0px auto;
+		margin: 0 2.5%;
+	}
+
+	.dayOfCalendar {
+		font-size: 12px;
+		background-color: $calendar-signal;
+		color: $text-calendar-signal;
+		float: left;
+		clear: none;
+		width: 40px;
+		height: 40px;
+		padding: 5px;
+		text-align: center;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		border-radius: 10px;
+		margin: 0;
+		border: 0px solid white;
+	}
+
+	.dayOfCalendar h4 {
+		text-align: center;
+		width: 40px;
+		height: 20px;
+		font-size: 20px;
+		margin: 0 0 0 0;
+		padding: 2px 0 0 0;
+		border-top: 1px solid $text-calendar-signal;
+	}
+
+	.eventSeparator {
+		float: left;
+		clear: both;
+		width: 65%;
+		height: 1px;
+		background-color: $calendar-event-separator;
+		margin: 3% 17.5%;
+		border: 0px solid white;
+		clear: both;
+	}
+
+	#resultCalendarBooking ul {
+		list-style-type: none;
+		padding:0;
+		margin: 0 1.5%;
+		width: 69.5%;
+		float: left;
+		border: 0px solid white;
+	}
+
+	.eventOfCalendar {
+		float: left;
+		padding: 0;
+		margin: 0;
+		overflow: hidden;
+		border: 0px solid white;
+		list-style-type: none;
+	}
+
+	.eventOfCalendar  li {
+		float: left;
+		margin: 0px auto;
+		padding: 0px 2.5%;
+		width:95%;
+	}
+
+	.eventOfCalendar li p {
+/* 		widht: 121px; */
+		float: left;
+		font-size: 1em;
+		line-height: 1.25em;
+		padding: 6px 0 0 19px;
+		margin: 0px;
+	}
+
+	.markerEvent {
+		float: left;
+		height: 9px;
+		width: 9px;
+		margin: 11px -15px 0 5px;
+		border: 0px solid lightgray;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+	}
+
+	#trigger p {
+		margin:0;
+		padding:0;
+	}
+
+	.data-martkerEvent {
+		display: none;
+		visibility: hidden;
+	}
+
+	.data-calendar-daylist {
+		display: none;
+		visibility: hidden;
+	}
+
+
+
+	#linkSpace {
+		width: 100%;
+		margin: 10px auto;
+		text-align: center;
+	}
+
+	#linkSpace ul.inline {
+		width: 100%;
+		margin:0;
+		padding:0;
+	}
+	#linkSpace ul.inline li {
+		width: 48.5%;
+		margin:0;
+		padding:0;
+	}
+	#linkSpace ul.inline li p {
+		width: 100%;
+		margin:0;
+		padding:0;
+	}
+
+	.navButton {
+		height: 10px;
+		margin: 10px auto;
+		text-align: center;
+		border: none;
+	}
+
+	#triangle1 {
+		margin: 0 auto;
+		width: 0;
+		height: 0;
+		line-height: 0;
+		border-bottom: 10px solid $arrows-color;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+	}
+
+	#triangle2 {
+		margin: 0 auto;
+		width: 0;
+		height: 0;
+		line-height: 0px;
+		border-top: 10px solid $arrows-color;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+	}
+
+	#triangle1:HOVER {
+		border-bottom: 10px solid $arrows-color-hover;
+	}
+
+	#triangle2:HOVER {
+		border-top: 10px solid $arrows-color-hover;
+	}
+
+	#triangle1:ACTIVE {
+		border-bottom: 10px solid $arrows-color-active;
+	}
+
+	#triangle2:ACTIVE {
+		border-top: 10px solid $arrows-color-active;
+	}
+
+	#show-legend {
+		display: none;
+		visibility: hidden;
+	}
+}
+
+.tooltip {
+	z-index: 100 !important; //HACK!
+
+	&.tooltip-hidden {
+		z-index: -999 !important;
+	}
+}
+
+.tooltip-help{
+	padding:0;
+	background-color: $tooltip-background;
+}
+
+.aui .tooltip-help .tooltip-inner {
+	background-color: $tooltip-background;
+	border: 1px solid $tooltip-background;
+}
+
+.tooltip-booking {
+	min-width: 180px;
+	font-size: 11px;
+	padding: 2px;
+	color: white;
+}
+
+.tooltip-booking dl {
+	background-color: $tooltip-background;
+	color: black;
+	width: 90%;
+	padding: 0 5%;
+	list-style-type: none;
+	margin: 0;
+	overflow: hidden;
+}
+
+.tooltip-booking dl dt, .tooltip-booking dl dd {
+	margin: 0;
+	float: left;
+	width: 45%;
+	padding: 0 2.5%;
+}
+
+.tooltip-booking .booking-title-tooltip {
+	width: 90%;
+	padding: 0 5%;
+	color: $tooltip-background;
+	margin: 0 0 2px 0;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+#show-legend-tooltip{
+	width: 180px;
+	background-color: $tooltip-background;
+	padding: 0;
+	font-size: 12px;
+}
+
+#show-legend-tooltip h4 {
+	padding: 0 5%;
+	margin: 0;
+	width: 90%;
+}
+
+#show-legend-tooltip ul {
+	list-style-type: none;
+	padding: 5px 5% 5px;
+	margin: 0;
+	width: 90%;
+}
+
+#show-legend-tooltip ul li {
+	padding: 0 5%;
+	margin: 0;
+	width: 90%;
+}
+
+#show-legend-tooltip ul .markerEvent {
+	float: left;
+	height: 9px;
+	width: 9px;
+	margin: 10px 10px 5px 5px;
+	border: 0px solid lightgray;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.datalist-event-tooltip {
+	border: 1px solid $calendar-event-separator;
+	padding: 1px;
+	width: 176px;
+	overflow: hidden;
+}
+
+.data-calendar-daylist .title-datalist-event-tooltip{
+	color: $calendar-event-separator;
+	font-size: 12px;
+	height: 14px;
+	margin: 0;
+	padding: 0;
+}
+
+.datalist-event-tooltip .markerEvent {
+	float: left;
+	height: 9px;
+	width: 9px;
+	margin: 10px 3px 0 4px;
+	border: 0px solid lightgray;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+
+}
+
+.datalist-event-tooltip p.datalist-singleevent-tooltip {
+	float:left;
+	width: 156px;
+	padding: 2px 1px;
+	margin: 0;
+	border: 1px solid white;
+}
