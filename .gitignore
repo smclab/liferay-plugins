@@ -48,3 +48,5 @@ _sass_cache_*.css
 
 /tools/*/*/*/lib
 /tools/node*
+
+/*/*/.settings
