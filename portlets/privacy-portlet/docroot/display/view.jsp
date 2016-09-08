@@ -17,6 +17,7 @@
 							groupId="<%= groupId %>"
 							showTitle="false"
 						/>
+
 						<liferay-portlet:renderURL var="viewPrivacyPolicyURL" windowState="<%= LiferayWindowState.MAXIMIZED.toString() %>">
 						    <portlet:param name="jspPage" value="/display/view_privacy_policy.jsp" />
 						</liferay-portlet:renderURL>
@@ -28,9 +29,9 @@
 						<a
 						    class="btn"
 						    data-href="<%= HtmlUtil.escapeAttribute(viewPrivacyPolicyPopUpURL) %>"
-						    href="'<%= HtmlUtil.escapeAttribute(viewPrivacyPolicyURL) %>"
+						    href="<%= HtmlUtil.escapeAttribute(viewPrivacyPolicyURL) %>"
 						    id="<portlet:namespace />readMore"
-						    title="<liferay-ui:message key="<%= privacyPolicy.getTitle(locale) %>" />"
+						    title="<%= HtmlUtil.escapeAttribute(privacyPolicy.getTitle(locale)) %>"
 						>
 						    <liferay-ui:message key="read-more" />
 						</a>
