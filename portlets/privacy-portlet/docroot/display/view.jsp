@@ -17,7 +17,23 @@
 							groupId="<%= groupId %>"
 							showTitle="false"
 						/>
-						<aui:button name="readMore" value="read-more" />
+						<liferay-portlet:renderURL var="viewPrivacyPolicyURL" windowState="<%= LiferayWindowState.MAXIMIZED.toString() %>">
+						    <portlet:param name="jspPage" value="/display/view_privacy_policy.jsp" />
+						</liferay-portlet:renderURL>
+
+						<liferay-portlet:renderURL var="viewPrivacyPolicyPopUpURL" windowState="<%= LiferayWindowState.POP_UP.toString() %>">
+						    <portlet:param name="jspPage" value="/display/view_privacy_policy.jsp" />
+						</liferay-portlet:renderURL>
+
+						<a
+						    class="btn"
+						    data-href="<%= HtmlUtil.escapeAttribute(viewPrivacyPolicyPopUpURL) %>"
+						    href="'<%= HtmlUtil.escapeAttribute(viewPrivacyPolicyURL) %>"
+						    id="<portlet:namespace />readMore"
+						    title="<liferay-ui:message key="<%= privacyPolicy.getTitle(locale) %>" />"
+						>
+						    <liferay-ui:message key="read-more" />
+						</a>
 						<aui:button cssClass="btn btn-primary" name="okButton" value="ok" />
 
 				</aui:column>
@@ -26,7 +42,7 @@
 	</div>
 
 	<liferay-portlet:renderURL var="viewPrivacyPolicyURL" windowState="<%= LiferayWindowState.POP_UP.toString() %>">
-		<portlet:param name="jspPage" value="/display/view_privacy_policy.jsp"/>
+		<portlet:param name="jspPage" value="/display/view_privacy_policy.jsp" />
 	</liferay-portlet:renderURL>
 
 	<aui:script use="aui-base,aui-io-deprecated,cookie,liferay-util-window">
@@ -40,30 +56,13 @@
 			e.halt();
 		});
 
-		readMore.on('click', function(e) {
-				e.preventDefault();
-
-				var dialog = Liferay.Util.Window.getWindow(
-					{
-						dialog: {
-							destroyOnClose: true,
-							modal: true,
-							centered: true,
-							width: 800,
-							height:600
-						},
-						title: '<%= privacyPolicy.getTitle(locale) %>'
-					}
-				);
-
-				dialog.plug(
-					A.Plugin.IO,
-					{
-						uri: '<%=viewPrivacyPolicyURL%>'
-					}
-				);
-			},
-			['liferay-util-window', 'aui-io-plugin-deprecated']
+		readMore.on(
+			'click',
+			function(event) {
+				if (!event.metaKey && !event.ctrlKey) {
+					Liferay.Util.openInDialog(event);
+				}
+			}
 		);
 
 		var wrapper = A.one('#wrapper');
@@ -98,6 +97,5 @@
 
 		}
 	</aui:script>
-
 
 </c:if>

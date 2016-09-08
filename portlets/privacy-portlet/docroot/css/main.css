@@ -21,11 +21,6 @@
 		padding-top: 8px;
 		padding-bottom: 8px;
 
-		a {
-			text-decoration: underline;
-			color: #FFF;
-		}
-
 		a.hide-strip-privacy-info-message {
 			text-decoration: underline;
 		}
